@@ -1,1 +1,1 @@
-# neurons
+# Neural networks
