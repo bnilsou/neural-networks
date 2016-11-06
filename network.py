@@ -33,10 +33,13 @@ class Network:
             s += 'la.' + str(i) + ':-> ' + str(self.layers[i]) + '\n'
         return s[:-1] # remove last character (\n)
 
-    def save(self, name):
+    def save(self):
         layers = []
+        name = 'network'
         for i in range(0, len(self.layers)):
             layers.append(len(self.layers[i]))
+            name += str(layers[i]) + '_'
+        name += 'a' + str(self.alpha)
         file = open(name + '.nnw', 'w')
         file.write(str(layers) + '\n')
         file.write(str(self.links) + '\n')
